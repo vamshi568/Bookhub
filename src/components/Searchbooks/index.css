@@ -1,0 +1,19 @@
+.ben {
+  display: flex;
+  gap: 20px;
+  height: 200px;
+  width: 300px;
+  text-decoration: none;
+}
+.ben img {
+  width: 133px;
+  height: 155px;
+}
+.ben h4 {
+  font-weight: 600;
+  font-size: 16px;
+  color: #334155;
+}
+.link {
+  text-decoration: none;
+}
