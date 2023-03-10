@@ -39,7 +39,7 @@ class Header extends Component {
             </Link>
           </li>
           <li>
-            <Link to="/bookshelves" className="link">
+            <Link to="/shelf" className="link">
               <Para onClick={this.change} cliked={cliked}>
                 Bookshelves
               </Para>

@@ -4,7 +4,7 @@ import './index.css'
 const Searchbooks = props => {
   const {list} = props
   return (
-    <Link to={`/bookshelves/${list.id}`} className="link">
+    <Link to={`/shelf/${list.id}`} className="link">
       <div className="ben">
         <img src={list.coverPic} alt={list.title} />
         <div>

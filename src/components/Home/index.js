@@ -106,12 +106,13 @@ export default class Home extends Component {
               Find Books
             </button>
           </div>
-
-          <Slider {...settings}>
-            {topratedbook.map(each => (
-              <Topbook list={each} key={each.id} />
-            ))}
-          </Slider>
+          <ul>
+            <Slider {...settings}>
+              {topratedbook.map(each => (
+                <Topbook list={each} key={each.id} />
+              ))}
+            </Slider>
+          </ul>
         </div>
 
         <Support />

@@ -34,7 +34,7 @@ const bookshelvesList = [
 
 class Bookshelves extends Component {
   state = {
-    shelf: 'READ',
+    shelf: 'ALL',
     serachinput: '',
     heading: 'All',
     reslist: [],
