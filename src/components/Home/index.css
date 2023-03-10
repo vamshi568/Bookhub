@@ -1,72 +1,62 @@
-.carosal {
-  padding: 20px 8%;
-  background: #e5e5e5;
-  /* position: relative; */
-}
-.carosal h1 {
-  margin-bottom: 10px;
-}
-.carosal p {
-  margin-bottom: 10px;
-}
-.topbookcard {
-  border-radius: 16px;
-  background-color: #fff;
-  padding: 30px 60px;
-  margin-top: 40px;
-}
-.topbookcard h2 {
-  margin: 20px;
-}
-.head button {
-  padding: 10px 20px;
-  gap: 8px;
-  width: 124px;
-  height: 46px;
-  background: #0284c7;
-  border-radius: 4px;
+.home-main-container {
+  background-color: #e5e5e5;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border-style: none;
-  color: white;
+  width: 100%;
+  height: 88vh;
+  margin-top: 0px;
 }
-.head {
+.home-container {
+  width: 80%;
+}
+.home-heading {
+  font-family: 'Inter';
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+.home-heading-description {
+  font-family: 'Inter';
+  font-size: 18px;
+  font-weight: 300;
+  color: #000000;
+}
+
+.slider-show-container {
+  height: 393px;
+  width: 80%;
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  background-color: #ffffff;
+  margin-bottom: 25px;
+}
+/* for top rated books and find button */
+.top-rated-books-and-find-books {
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.contact {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-.contact div {
-  display: flex;
-  gap: 10px;
-}
-.products-loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
+.find-books-button {
+  padding: 8px 16px;
+  background-color: #0284c7;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Inter';
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* You can change the CSS color to style the Next and 
-Previous Arrow buttons according to your project */
-
-.slick-prev:before,
-.slick-next:before {
-  color: black;
+.top-rated-books {
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto';
 }

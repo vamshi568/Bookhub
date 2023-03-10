@@ -1,56 +1,114 @@
-import {Link, withRouter} from 'react-router-dom'
 import {Component} from 'react'
 
+import {Link, withRouter} from 'react-router-dom'
+import {FaBars} from 'react-icons/fa'
+
+import {AiFillCloseCircle} from 'react-icons/ai'
 import Cookies from 'js-cookie'
-import {Logoimg} from '../login/style'
+
 import './index.css'
-import {Headerline, Loginbtn, Para} from './style'
 
 class Header extends Component {
-  state = {hcliked: true, cliked: false}
+  state = {
+    isClick: false,
+  }
 
-  logout = () => {
+  onClickLogout = () => {
     const {history} = this.props
     Cookies.remove('jwt_token')
     history.replace('/login')
   }
 
-  change = () => this.setState({hcliked: false, cliked: true})
+  scrollOptions = () => (
+    <ul className="options-container">
+      <li className="nav-menu-item">
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+      </li>
+      <li className="nav-menu-item">
+        <Link to="/shelf" className="nav-link">
+          Bookshelves
+        </Link>
+      </li>
+      <button className="logout-desktop-button" type="button">
+        Logout
+      </button>
+      <button
+        type="button"
+        className="close-button"
+        onClick={this.onClickNavbar}
+      >
+        <AiFillCloseCircle className="close-logo" />
+      </button>
+    </ul>
+  )
 
-  changehome = () => this.setState({hcliked: true, cliked: false})
+  onClickNavbar = () => {
+    this.setState(prevState => ({
+      isClick: !prevState.isClick,
+    }))
+  }
 
   render() {
-    const {hcliked, cliked} = this.state
+    const {isClick} = this.state
 
     return (
-      <Headerline>
-        <Link to="/">
-          <Logoimg
-            src="https://res.cloudinary.com/dbs9akgm5/image/upload/v1678253576/logo_zyhxy9.png"
-            alt="website logo"
-          />
-        </Link>
-        <div className="headlines">
-          <li>
-            <Link to="/" className="link">
-              <Para onClick={this.changehome} cliked={hcliked}>
-                Home
-              </Para>
+      <nav className="nav-header" fixed="true">
+        <div className="nav-content">
+          <div className="navbar-mobile-logo-main-container">
+            <div className="navbar-mobile-logo-container">
+              <Link to="/">
+                <img
+                  src="https://res.cloudinary.com/saikrishnaboga-ccbp-tech/image/upload/v1643539861/Book-Hub%20/Group_7731login-B-logo_vneo4x.png"
+                  alt="website logo"
+                  className="website-logo"
+                />
+              </Link>
+              <button
+                type="button"
+                className="nav-bars-button"
+                onClick={this.onClickNavbar}
+              >
+                <FaBars className="nav-bars" />
+              </button>
+            </div>
+            <div className="scroll-options-container">
+              {isClick && this.scrollOptions()}
+            </div>
+          </div>
+          <div className="navbar-desktop-container">
+            <Link to="/" className="nav-link">
+              <img
+                src="https://res.cloudinary.com/saikrishnaboga-ccbp-tech/image/upload/v1643539861/Book-Hub%20/Group_7731login-B-logo_vneo4x.png"
+                alt="website logo"
+                className="website-logo"
+              />
             </Link>
-          </li>
-          <li>
-            <Link to="/shelf" className="link">
-              <Para onClick={this.change} cliked={cliked}>
-                Bookshelves
-              </Para>
-            </Link>
-          </li>
-          <Loginbtn type="button" onClick={this.logout}>
-            Logout
-          </Loginbtn>
+            <ul className="nav-menu">
+              <li className="nav-menu-item">
+                <Link to="/" className="nav-link">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-menu-item">
+                <Link to="/shelf" className="nav-link">
+                  Bookshelves
+                </Link>
+              </li>
+              <button
+                className="logout-desktop-button"
+                onClick={this.onClickLogout}
+                type="button"
+              >
+                Logout
+              </button>
+            </ul>
+          </div>
         </div>
-      </Headerline>
+      </nav>
     )
   }
 }
+
 export default withRouter(Header)
